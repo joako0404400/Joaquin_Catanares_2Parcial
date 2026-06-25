@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.productos.view.ProductosViewController"
+            prefWidth="1000" prefHeight="620">
+
+    <top>
+        <VBox style="-fx-background-color: #1a2e4a; -fx-padding: 14 24 14 24;">
+            <Label text="Sistema de Gestión de Productos"
+                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <padding><Insets top="14" right="14" bottom="0" left="14"/></padding>
+            <Label text="Productos registrados"
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+            <TableView fx:id="tblProductos" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colTipo"      text="Tipo"       prefWidth="90"/>
+                    <TableColumn fx:id="colCodigo"    text="Código"     prefWidth="90"/>
+                    <TableColumn fx:id="colMarca"     text="Marca"      prefWidth="100"/>
+                    <TableColumn fx:id="colModelo"    text="Modelo"     prefWidth="110"/>
+                    <TableColumn fx:id="colPrecio"    text="Precio"     prefWidth="90"/>
+                    <TableColumn fx:id="colStock"     text="Stock"      prefWidth="70"/>
+                    <TableColumn fx:id="colProveedor" text="Proveedor"  prefWidth="130"/>
+                    <TableColumn fx:id="colExtra"     text="Extra"      prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="10" prefWidth="260"
+              style="-fx-background-color: white; -fx-border-color: #dde3ec; -fx-border-width: 0 0 0 1;">
+            <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+
+            <Label text="Datos del producto"
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+
+            <ComboBox fx:id="cmbTipo" maxWidth="Infinity"/>
+            <TextField fx:id="txtCodigo"  promptText="Código"/>
+            <TextField fx:id="txtMarca"   promptText="Marca"/>
+            <TextField fx:id="txtModelo"  promptText="Modelo"/>
+            <TextField fx:id="txtPrecio"  promptText="Precio"/>
+            <TextField fx:id="txtStock"   promptText="Stock"/>
+            <ComboBox fx:id="cmbProveedor" maxWidth="Infinity"/>
+            <Label fx:id="lblExtra" text="Garantía (meses):"/>
+            <TextField fx:id="txtExtra"   promptText="Valor"/>
+
+            <Separator/>
+
+            <Button text="✚ Agregar"
+                    onAction="#onAgregar" maxWidth="Infinity"
+                    style="-fx-background-color: #1a6b3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 9;"/>
+            <Button text="✎ Modificar"
+                    onAction="#onModificar" maxWidth="Infinity"
+                    style="-fx-background-color: #1a4a8a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 9;"/>
+            <Button text="✖ Eliminar"
+                    onAction="#onEliminar" maxWidth="Infinity"
+                    style="-fx-background-color: #8a1a1a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 9;"/>
+            <Button text="↺ Limpiar"
+                    onAction="#onLimpiar" maxWidth="Infinity"
+                    style="-fx-background-color: #555; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 7;"/>
+
+            <Separator/>
+
+            <Button text="Exportar caros (+$500k)"
+                    onAction="#onExportar" maxWidth="Infinity"
+                    style="-fx-background-color: #7a5c00; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 7;"/>
+            <Button text="Ver inventario total"
+                    onAction="#onVerInventario" maxWidth="Infinity"
+                    style="-fx-background-color: #2a6a6a; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 7;"/>
+
+            <Label fx:id="lblInfo" text="" wrapText="true"
+                   style="-fx-font-size: 11px;"/>
+        </VBox>
+    </right>
+
+    <bottom>
+        <Label text="Los productos se guardan automáticamente en productos.csv"
+               style="-fx-background-color: #e8ecf2; -fx-text-fill: #666;
+                      -fx-font-size: 11px; -fx-padding: 5 14 5 14;"
+               maxWidth="Infinity"/>
+    </bottom>
+
+</BorderPane>

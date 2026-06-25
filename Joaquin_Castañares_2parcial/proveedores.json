@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "razonSocial": "Samsung Argentina",
+      "telefono": "1144556677",
+      "email": "ventas@samsung.com",
+      "ciudad": "Buenos Aires"
+    },
+    {
+      "id": 2,
+      "razonSocial": "Arcor",
+      "telefono": "3515551234",
+      "email": "info@arcor.com",
+      "ciudad": "Cordoba"
+    },
+    {
+      "id": 3,
+      "razonSocial": "Sony",
+      "telefono": "1166644433",
+      "email": "contacto@sony.com",
+      "ciudad": "Buenos Aires"
+    },
+    {
+      "id": 4,
+      "razonSocial": "Molinos Rio de la Plata",
+      "telefono": "3415558888",
+      "email": "ventas@molinos.com",
+      "ciudad": "Rosario"
+    }
+  ]
